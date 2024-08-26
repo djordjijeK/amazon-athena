@@ -1,14 +1,16 @@
-# Welcome to your CDK TypeScript project
+# Infrastructure
 
-This is a blank project for CDK development with TypeScript.
+- Define AWS environment (in `config.ts`)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+    ```
+    export const ACCOUNT_ID = 'xxxxxxxxxxxx';
+    export const REGION = 'aws-region';
+    ```
 
-## Useful commands
+- Deploy infrastructure
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+    ```
+    $ cdk bootstrap && cdk-deploy --all
+    ```
+
+
